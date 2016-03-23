@@ -11,6 +11,7 @@ namespace Shopery\Bundle\ViewBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+use Shopery\Bundle\ViewBundle\DependencyInjection\Compiler\RegisterViewExtensions;
 use Shopery\Bundle\ViewBundle\DependencyInjection\Compiler\RegisterViewFactories;
 use Shopery\Bundle\ViewBundle\Extension\ViewExtension;
 
@@ -28,6 +29,7 @@ class ViewBundle extends Bundle
     {
         parent::build($container);
 
+        $container->addCompilerPass(new RegisterViewExtensions());
         $container->addCompilerPass(new RegisterViewFactories());
     }
 

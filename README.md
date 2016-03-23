@@ -13,7 +13,7 @@ And add the bundle to your kernel as usual.
 
 If you have any trouble, please refer to the [symfony docs](http://symfony.com/doc/current/cookbook/bundles/installation.html).
 
-## Usage
+## Factories
 
 This bundle defines a service named `view_factory` which can be injected as a dependency.
 
@@ -32,3 +32,9 @@ services:
 ```
 
 So whenever you pass an `Acme\Product` to `view_factory::create_view`, your factory is run.
+
+## Extensions
+
+Multiple view extensions can be defined as services and tagged with the `view_factory.extension` tag.
+
+This services must implement `Shopery\View\Extension\ViewExtension`.

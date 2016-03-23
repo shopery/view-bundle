@@ -19,3 +19,17 @@ services:
     view_factory.collection:
         class: Shopery\View\Factory\CollectionViewFactory
         public: false
+
+    view_factory.extension:
+        class: Shopery\View\Extension\ExtensibleViewFactory
+        public: false
+        decorates: view_factory.registry
+        arguments:
+            - "@view_factory.extension.inner"
+            - "@view_factory.extension_resolver"
+
+    view_factory.extension_resolver:
+        class: Shopery\Bundle\ViewBundle\Resolver\SymfonyExtensionViewResolver
+        public: false
+        arguments:
+            - "@service_container"
