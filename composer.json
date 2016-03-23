@@ -1,0 +1,12 @@
+{
+    "name": "shopery/view-bundle",
+    "description": "Integrate shopery/view in your symfony application",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Berny Cantos",
+            "email": "be@rny.cc"
+        }
+    ]
+}
