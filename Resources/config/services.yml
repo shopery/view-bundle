@@ -1,0 +1,21 @@
+services:
+
+    view_factory:
+        class: Shopery\View\Factory\RootViewFactory
+        public: false
+        calls:
+            - [ setFactory, [ "@view_factory.composite" ] ]
+
+    view_factory.composite:
+        class: Shopery\View\Factory\CompositeViewFactory
+        public: false
+        arguments:
+            - [ "@view_factory.registry", "@view_factory.collection" ]
+
+    view_factory.registry:
+        class: Shopery\View\Factory\RegistryViewFactory
+        public: false
+
+    view_factory.collection:
+        class: Shopery\View\Factory\CollectionViewFactory
+        public: false
