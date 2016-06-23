@@ -19,6 +19,6 @@
         "symfony/dependency-injection": ">=2.3",
         "symfony/http-foundation": ">=2.3",
         "symfony/http-kernel": ">=2.3",
-        "shopery/view": "^1.1"
+        "shopery/view": "^1.2"
     }
 }
